@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'user.dart';
 
@@ -61,42 +62,65 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            Padding(padding: EdgeInsets.only(top:20)),
             Image.asset(
               'assets/classic-log-classic-ef.gif',
-              width: 350,
-              height: 350,
+              width: 250,
+              height: 250,
+              
             ),
             Padding(
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  TextFormField(
-                    controller: emailController,
-                    decoration: InputDecoration(
-                      label: Text('Enter Email'),
-                      prefixIcon: Icon(Icons.person),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(),
+                  
+                  Container(
+                    decoration: BoxDecoration(  
+                     borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                      boxShadow: [BoxShadow(
+                       blurRadius: 5,
+                          color: const Color.fromARGB(206, 0, 0, 0),
+                          offset: Offset(1,9)
+
+                    )]),
+                    child: TextFormField(
+                      
+                      controller: emailController,
+                      decoration: InputDecoration(
+                        label: Text('Enter Email'),
+                        prefixIcon: Icon(Icons.person),
+                        
+                        
                       ),
                     ),
                   ),
                   SizedBox(height: 20),
-                  TextFormField(
-                    controller: passwordController,
-                    obscureText: isSecured,
-                    decoration: InputDecoration(
-                      label: Text('Enter password'),
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            isSecured = !isSecured;
-                          });
-                        },
-                        icon: Icon(Icons.remove_red_eye),
-                      ),
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(),
+                  Container(
+                    decoration: BoxDecoration(  
+                     borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                      boxShadow: [BoxShadow(
+                       blurRadius: 5,
+                          color: const Color.fromARGB(206, 0, 0, 0),
+                          offset: Offset(1,9)
+
+                    )]),
+                    child: TextFormField(
+                      controller: passwordController,
+                      obscureText: isSecured,
+                      decoration: InputDecoration(
+                        label: Text('Enter password'),
+                        prefixIcon: Icon(Icons.lock),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isSecured = !isSecured;
+                            });
+                          },
+                          icon: Icon(Icons.remove_red_eye),
+                        ),
+                        
                       ),
                     ),
                   ),
@@ -115,7 +139,12 @@ class _HomePageState extends State<HomePage> {
                       padding: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: Color.fromARGB(255, 179, 177, 181),
+                        color: Color.fromARGB(255, 234, 167, 189),
+                        boxShadow: [   BoxShadow(
+                          blurRadius: 5,
+                          color: const Color.fromARGB(206, 0, 0, 0),
+                          offset: Offset(1,9)
+                        )]
 
                       ),
                       child: Row(
